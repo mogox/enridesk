@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="small-8 small-centered columns">
+    <h1>Cases for filter</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-5 columns centered">
+    <ul class="side-nav">
+      <% @cases.each do |kase| %>
+        <li>
+          <a href="./cases/<%= kase.id %>">
+            <%= kase.subject %>
+          </a>
+          <%= kase.labels %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
