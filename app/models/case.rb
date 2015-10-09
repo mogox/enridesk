@@ -5,4 +5,9 @@ class Case
     data = Desk.filter_cases(filter_id)
     data["raw"]["_embedded"]["entries"]
   end
+
+  def self.find(id)
+    data = Desk.case(id)
+    data["raw"]
+  end
 end

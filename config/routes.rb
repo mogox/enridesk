@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #   end
   root 'home#index'
   resources :filters, only: [:show]
+  resources :cases, only: [:show]
 end

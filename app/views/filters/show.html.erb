@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-10 columns">
     <h4>
-      Cases by filter: <strong><%= @filter.name %></strong>
+      Filter: <strong><%= @filter.name %></strong>
     </h4>
   </div>
 </div>
@@ -10,12 +10,17 @@
   <div class="small-12 columns">
     <ul class="side-nav">
       <% @cases.each do |kase| %>
-        <li>
-          <a href="./cases/<%= kase.id %>">
-            <%= kase.subject %>
-          </a>
-        </li>
-        <%= kase.labels %>
+        <div class="card">
+          <div class="content">
+            <a href="<%= case_path(kase.id) %>">
+              <%= kase.subject %>
+            </a>
+            <br>
+            <div class="labels">
+              Labels: <%= kase.labels.join(', ') %>
+            </div>
+          </div>
+        </div>
       <% end %>
     </ul>
   </div>
