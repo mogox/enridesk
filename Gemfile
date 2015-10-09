@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -22,7 +22,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 
 # API
 gem "hashie", '3.4.1'
@@ -57,4 +56,8 @@ group :development do
 end
 
 # PRODUCTION
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  # log entries
+  gem 'le'
+end

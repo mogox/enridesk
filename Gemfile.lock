@@ -88,6 +88,7 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
+    le (2.6.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     looksee (3.1.0)
@@ -211,6 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  le
   looksee
   pry-rails
   rails (= 4.2.4)
