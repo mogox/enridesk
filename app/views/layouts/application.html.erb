@@ -51,6 +51,12 @@
           </li>
         <% end %>
       </ul>
+      <%= form_tag({controller: "labels", action: "create", method: "post"},  id: 'new_label_form' ) do %>
+        <%= text_field_tag(:label) %>
+        <a href="#" class="add_label">
+          <i class="fa fa-plus"> Add label</i>
+        </a>
+      <% end %>
     </div>
   </div>
 </body>

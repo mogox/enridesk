@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on("click", ".add_label", function(){
+   $("#new_label_form").submit();
+   console.log("ABC");
+});
