@@ -25,9 +25,10 @@
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
+    <hr>
   </nav
   <div class="row">
-    <div class="small-2 columns">
+    <div class="small-10 medium-2 large-2 columns">
       <ul class="filters side-nav">
         <li class="heading">Filters</li>
         <% @filters.each do |filter| %>
@@ -36,11 +37,12 @@
           </li>
         <% end %>
       </ul>
+      <hr>
     </div>
-    <div class="small-8 columns">
+    <div class="small-10 medium-8 large-8 columns">
       <%= yield %>
     </div>
-    <div class="small-2 columns">
+    <div class="small-10 medium-2 large-2 columns">
       <ul class="filters side-nav">
         <li class="heading">Labels</li>
         <% @labels.each do |label| %>
