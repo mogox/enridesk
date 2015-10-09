@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.filters.side-nav li{
+  font-size: 0.75rem;
+}

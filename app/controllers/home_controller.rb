@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @filters = Filter.all
+    load_filters
+    load_labels
   end
 end
