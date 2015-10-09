@@ -61,3 +61,5 @@ group :production do
   # log entries
   gem 'le'
 end
+
+gem 'puma'
