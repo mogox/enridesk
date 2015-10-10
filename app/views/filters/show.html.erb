@@ -16,9 +16,7 @@
               <%= kase.subject %>
             </a>
             <br>
-            <div class="labels">
-              Labels: <%= kase.labels.join(', ') %>
-            </div>
+            <%= render partial: "/labels/short_list", locals: { local_labels: kase.labels } %>
           </div>
         </div>
       <% end %>

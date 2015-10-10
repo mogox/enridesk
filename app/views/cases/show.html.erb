@@ -1,19 +1,12 @@
 <div class="row">
-  <div class="small-12 columns">
-    <div class="card">
-      <div class="content">
-        <a href="<%= case_path(@kase.id) %>">
-          <%= @kase.subject %>
-        </a>
-        <br>
-        <div>
-          <%= @kase.blurb %>
-        </div>
-        <br>
-        <div class="labels">
-          <strong>Labels:</strong> <%= @kase.labels.join(', ') %>
-        </div>
-      </div>
+  <div class="small-12 columns case">
+    <h2 class="title">
+      <%= @kase.subject %>
+    </h2>
+    <div>
+      <%= @kase.blurb %>
     </div>
+    <br>
+    <%= render partial: "/labels/short_list", locals: { local_labels: @kase.labels } %>
   </div>
 </div>
