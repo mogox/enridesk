@@ -13,24 +13,41 @@
  *= require_tree .
  *= require_self
  */
- @import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
-.filters.side-nav li{
-  font-size: 0.75rem;
+@import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
+
+.enridesk{
+  .row{
+    max-width: 80rem;
+  }
+}
+
+.filters{
+  &.side-nav li {
+    margin: 0 0 0 .05rem;
+    a {
+      padding: 0.25rem 0.25rem;
+      font-size: 0.75rem;
+    }
+  }
 }
 
 .case{
   .title{
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    color: #ffab40;
+    color: #ad6c60;
     font-size: 1.4rem;
   }
 }
 
+.add-label{
+  color: white;
+}
+
 .card {
-  border: 1px #CCC solid;
+  border: 1px #EEE solid;
   padding: 10px 5px 20px 5px;
-  margin: 10px 10px;
+  margin: 0 10px;
   border-radius: 2px;
   .title {
     line-height: 3rem;
@@ -53,7 +70,7 @@
     padding: 1.3rem;
   }
   a {
-    color: #ffab40;
+    color: #ad6c60;
     margin-right: 1.3rem;
     transition: color 0.3s ease;
     text-transform: uppercase;
