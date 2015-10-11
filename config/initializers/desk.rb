@@ -7,7 +7,7 @@ class DeskClient
       config.consumer_secret = ENV["desk_consumer_secret"]
       config.oauth_token = ENV["desk_oauth_token"]
       config.oauth_token_secret = ENV["desk_oauth_token_secret"]
-      config.logger = Logger.new(STDOUT)
+      # config.logger = Logger.new(STDOUT)
     end
   end
 end
