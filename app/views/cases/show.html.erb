@@ -4,9 +4,35 @@
       <%= @kase.subject %>
     </h2>
     <div>
-      <%= @kase.blurb %>
+      <%= @kase.blurb || "[No content]" %>
     </div>
     <br>
     <%= render partial: "/labels/short_list", locals: { local_labels: @kase.labels } %>
+    <br>
+    <div class="row">
+      <div class="small-8 columns case">
+        <%= form_tag(method: "put", controller: :cases, action: :update,  id: @kase.id ) do %>
+          <div class="row collapse">
+            <div class="small-7 columns">
+              <label>
+                <select class="label_selector" name="label_id">
+                  <% @labels.each do |label| %>
+                    <option value="<%=label.name%>"><%= label.name %></option>
+                  <% end %>
+                </select>
+              </label>
+            </div>
+            <div class="small-5 columns">
+              <button type="submit" name="submit" class="tiny add-label">
+                <i class="fa fa-plus"> Add label</i>
+              </button>
+            </div>
+          </div>
+          <input name="_method" type="hidden" value="put">
+          <input type="hidden" name="case_id" class="case_id" value= "<%= @kase.id %>" >
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

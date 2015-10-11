@@ -10,4 +10,9 @@ class Case
     data = Desk.case(id)
     data["raw"]
   end
+
+  def self.add_label(id, name)
+    data = Desk.update_case(id, labels: [name])
+    data
+  end
 end
