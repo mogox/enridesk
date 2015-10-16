@@ -25,7 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # API
 gem "hashie", '3.4.1'
-gem 'desk'
+
+# HTTP Request
+gem "simple_oauth"
+gem "faraday"
+gem "faraday_middleware"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

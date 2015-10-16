@@ -1,9 +1,9 @@
-require 'desk'
-
-class Label
+class Label < Base
   def self.all
-    data = Desk.labels
-    data["raw"]["_embedded"]["entries"]
+    data = desk_api.get 'api/v2/labels'
+    data.body["_embedded"]["entries"].map{ |label|
+      Hashie::Mash.new label
+    }
   end
 
   def self.create(name, description)
