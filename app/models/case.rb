@@ -1,18 +1,18 @@
-require 'desk'
-
-class Case
+class Case < Base
   def self.by_filter(filter_id)
-    data = Desk.filter_cases(filter_id)
-    data["raw"]["_embedded"]["entries"]
+    data = desk_api.get "api/v2/filters/#{filter_id}/cases"
+    data.body["_embedded"]["entries"].map{ |kase|
+      Hashie::Mash.new kase
+    }
   end
 
   def self.find(id)
-    data = Desk.case(id)
-    data["raw"]
+    data = desk_api.get "api/v2/cases/#{id}"
+    Hashie::Mash.new data.body
   end
 
   def self.add_label(id, name)
-    data = Desk.update_case(id, labels: [name])
-    data
+    data = desk_api.patch "api/v2/cases/#{id}", { labels: [name] }
+    Hashie::Mash.new data.body
   end
 end

@@ -1,13 +1,13 @@
-require 'desk'
-
-class Filter
+class Filter < Base
   def self.all
-    data = Desk.filters
-    data["raw"]["_embedded"]["entries"]
+    data = desk_api.get 'api/v2/filters'
+    data.body["_embedded"]["entries"].map{ |filter|
+      Hashie::Mash.new filter
+    }
   end
 
   def self.find(id)
-    data = Desk.filter(id)
-    data["raw"]
+    data = desk_api.get "api/v2/filters/#{id}"
+    Hashie::Mash.new data.body
   end
 end
