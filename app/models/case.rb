@@ -12,7 +12,7 @@ class Case < Base
   end
 
   def self.add_label(id, name)
-    data = Desk.update_case(id, labels: [name])
-    data
+    data = desk_api.patch "api/v2/cases/#{id}", { labels: [name] }
+    Hashie::Mash.new data.body
   end
 end

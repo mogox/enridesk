@@ -7,11 +7,12 @@ class Label < Base
   end
 
   def self.create(name, description)
-    data = Desk.create_label(
-      :name => name,
-      :description => description,
-      :types => [ "case", "macro" ],
+    data = desk_api.post(
+      'api/v2/labels',
+      { name: name,
+        description: description,
+        types: ["case", "macro"] }
     )
-    data
+    Hashie::Mash.new data.body
   end
 end

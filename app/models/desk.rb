@@ -11,6 +11,7 @@ class Desk
       faraday.request :desk_oauth
 
       faraday.response :json, :content_type => /\bjson$/
+      faraday.response :follow_redirects
 
       faraday.use :instrumentation
       faraday.adapter Faraday.default_adapter
