@@ -4,7 +4,7 @@
       <%= @kase.subject %>
     </h2>
     <div>
-      <%= @kase.blurb || "[No content]" %>
+      <%= @kase.blurb || @kase.description || "[No content]" %>
     </div>
     <br>
     <%= render partial: "/labels/short_list", locals: { local_labels: @kase.labels } %>
